@@ -1,0 +1,6 @@
+---
+- name: set the timezone to EST
+  lineinfile: dest=/etc/timezone state=present insertbefore=BOF
+              regexp="^America/New_York" line="America/New_York"
+  sudo: yes
+  notify: [reconfigure tzdata]

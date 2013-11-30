@@ -1,0 +1,38 @@
+---
+- name: install userspace packages
+  apt: pkg={{ item }} state=installed
+  sudo: True
+  tags: [packages]
+  with_items:
+    - ack-grep
+    - aspell-en
+    - build-essential
+    - cloc
+    - curl
+    - git
+    - gnuplot-x11
+    - graphviz
+    - htop
+    - libsqlite3-dev
+    - libxml2-dev # Nokogiri
+    - libxslt1-dev # Nokogiri
+    - libyaml-dev
+    - openjdk-7-jdk
+    - python-software-properties
+    - r-base-core
+    - screen
+    - software-properties-common
+    - sqlite3
+    - texlive-fonts-recommended
+    - texlive-latex-extra
+    - texlive-latex-recommended
+    - texlive-xetex
+    - tree
+    - update-manager-core # for do-release-upgrade -d
+    - vim
+    - wamerican # /usr/share/dict/words
+    - whois
+    - wordnet
+    - xorg
+    - xstow
+    - zsh

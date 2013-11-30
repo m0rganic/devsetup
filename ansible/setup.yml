@@ -1,0 +1,19 @@
+---
+- hosts: devel
+  user: vagrant
+
+  vars:
+    user: vagrant
+
+  tasks:
+    - name: upgrade packages
+      apt: upgrade=yes update_cache=yes
+      sudo: yes
+    - include: tasks/timezone.yml
+    - include: tasks/tools.yml
+    - include: tasks/dotfiles.yml
+
+  handlers:
+    - name: reconfigure tzdata
+      shell: dpkg-reconfigure -f noninteractive tzdata
+      sudo: yes
