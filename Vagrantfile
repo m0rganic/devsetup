@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu1310-docker-ansible"
+  config.vm.box = "ubuntu1204-docker-ansible"
 
   config.vm.network :private_network, ip: "192.168.127.4"
   config.vm.network :forwarded_port, guest: 5000, host: 5000
