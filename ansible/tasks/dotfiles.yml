@@ -1,12 +1,12 @@
 ---
 - name: clone dotfiles
   # personalized dotfiles are located on the m0rganic branch
-  git: repo=http://github.com/m0rganic/dotfiles.git dest=/usr/share/dotfiles version=m0rganic
+  git: repo=http://github.com/m0rganic/dotfiles.git dest=/tmp/dotfiles version=m0rganic
   sudo: yes
   tags: [git]
 
-- name: link dotfiles
-  file: dest=~/{{ item }} src=/usr/share/dotfiles/{{ item }} owner={{ user }} force=yes state=link
+- name: copy dotfiles
+  command: cp -f /tmp/dotfiles/{{ item }} ~/{{ item }}
   tags: [copy]
   with_items:
     - .bashrc
@@ -14,12 +14,12 @@
     - .gitconfig
     - .gitignore
     - .screenrc
-    - .vimrc
-    - .zshenv
-    - .zshrc
+    # - .vimrc
+    # - .zshenv
+    # - .zshrc
 
 - name: copy ssh_config
-  file: dest=~/.ssh/config src=/usr/share/dotfiles/ssh_config state=link
+  command: cp -f /tmp/dotfiles/ssh_config ~/.ssh/config
   tags: [copy]
 
 
