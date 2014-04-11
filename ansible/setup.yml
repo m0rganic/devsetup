@@ -6,9 +6,9 @@
     user: vagrant
 
   tasks:
-    - name: upgrade packages
-      apt: upgrade=yes update_cache=yes
-      sudo: yes
+    # - name: upgrade packages
+    #   apt: upgrade=yes update_cache=yes
+    #   sudo: yes
     - include: tasks/timezone.yml
     - include: tasks/tools.yml
     - include: tasks/dotfiles.yml

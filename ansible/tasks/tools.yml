@@ -8,7 +8,7 @@
     # - aspell-en
     # - build-essential
     # - cloc
-    - curl
+    # - curl
     - git
     # - nodejs
     # - npm

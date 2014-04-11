@@ -3,7 +3,7 @@
 
 Vagrant.configure('2') do |config|
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = 'ubuntu'
+  config.vm.box = 'ubuntu1204-docker-ansible'
 
   config.vm.network :private_network, ip: '192.168.127.9'
   config.vm.network :forwarded_port, guest: 5000, host: 5000
@@ -12,6 +12,9 @@ Vagrant.configure('2') do |config|
   # Forward X11
   config.ssh.forward_x11 = true
 
+  # file sharing
+  config.vm.synced_folder '.', '/vagrant'
+
   config.vm.provision 'ansible' do |ansible|
     ansible.inventory_path = './vagrant_ansible_hosts'
     ansible.limit = 'all'
@@ -19,6 +22,5 @@ Vagrant.configure('2') do |config|
     ansible.verbose = 'vvv'
   end
 
-  config.vm.synced_folder '.', '/vagrant'
 
 end
