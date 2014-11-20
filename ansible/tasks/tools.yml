@@ -19,7 +19,8 @@
     # - libxml2-dev # Nokogiri
     # - libxslt1-dev # Nokogiri
     # - libyaml-dev
-    # - openjdk-7-jdk
+    - openjdk-7-jdk
+    - maven2
     # - python-software-properties
     # - r-base-core
     # - screen
@@ -29,9 +30,9 @@
     # - texlive-latex-extra
     # - texlive-latex-recommended
     # - texlive-xetex
-    # - tree
+    - tree
     # - update-manager-core # for do-release-upgrade -d
-    # - vim
+    - vim
     # - wamerican # /usr/share/dict/words
     # - whois
     # - wordnet
