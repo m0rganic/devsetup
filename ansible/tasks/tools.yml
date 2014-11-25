@@ -9,6 +9,7 @@
     # - build-essential
     # - cloc
     # - curl
+    - make
     - git
     # - nodejs
     # - npm
